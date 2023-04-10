@@ -1,6 +1,8 @@
 import Matter from 'matter-js'
-import React from 'react'
-import { View } from 'react-native'
+import { Image } from 'react-native'
+
+import pipeBottom from '../../assets/pipe-green.png'
+import pipeTop from '../../assets/pipe-red.png'
 
 const Obstacle = (props) => {
   const widthBody = props.body.bounds.max.x - props.body.bounds.min.x
@@ -9,20 +11,18 @@ const Obstacle = (props) => {
   const xBody = props.body.position.x - widthBody / 2
   const yBody = props.body.position.y - heightBody / 2
 
-  const color = props.color
+  const image = props.color === 'green' ? pipeBottom : pipeTop
 
   return (
-    <View
+    <Image
+      resizeMode="stretch"
+      source={image}
       style={{
-        borderWidth: 1,
-        borderColor: color,
-        backgroundColor: color,
-        borderStyle: 'solid',
         position: 'absolute',
         left: xBody,
         top: yBody,
-        width: widthBody,
         height: heightBody,
+        width: widthBody + 50,
       }}
     />
   )
