@@ -1,5 +1,7 @@
 import Matter from 'matter-js'
-import { View } from 'react-native'
+import { Image, View } from 'react-native'
+
+import floor from '../../assets/floor.png'
 
 const Floor = (props) => {
   const widthBody = props.body.bounds.max.x - props.body.bounds.min.x
@@ -11,14 +13,15 @@ const Floor = (props) => {
   const color = props.color
 
   return (
-    <View
+    <Image
+      source={floor}
       style={{
         backgroundColor: color,
         position: 'absolute',
         left: xBody,
         top: yBody,
-        width: widthBody,
-        height: heightBody,
+        width: widthBody + 200,
+        height: heightBody + 100,
       }}
     />
   )
