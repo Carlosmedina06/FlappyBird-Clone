@@ -1,5 +1,7 @@
-import { View } from 'react-native'
+import { Image } from 'react-native'
 import Matter from 'matter-js'
+
+import flappybird from '../../assets/flappybird.png'
 
 export default (world, color, pos, size) => {
   const initialBird = Matter.Bodies.rectangle(pos.x, pos.y, size.width, size.height, {
@@ -16,25 +18,21 @@ export default (world, color, pos, size) => {
   }
 }
 
-export const Bird = ({ body, color }) => {
+export const Bird = ({ body }) => {
   const widthBody = body.bounds.max.x - body.bounds.min.x
   const heightBody = body.bounds.max.y - body.bounds.min.y
   const xBody = body.position.x - widthBody / 2
   const yBody = body.position.y - heightBody / 2
 
   return (
-    <View
+    <Image
+      source={flappybird}
       style={{
-        borderWidth: 1,
-        borderColor: 'black',
-        borderStyle: 'solid',
         position: 'absolute',
-        backgroundColor: color,
         left: xBody,
         top: yBody,
-        width: widthBody,
+        width: widthBody + 20,
         height: heightBody,
-        backgroundColor: color,
       }}
     />
   )
