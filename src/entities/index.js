@@ -27,14 +27,14 @@ const restar = () => {
     ObstacleTop1: Obstacle(
       world,
       'ObstacleTop1',
-      'purple',
+      'red',
       pipeSizePosA.pipeTop.pos,
       pipeSizePosA.pipeTop.size,
     ),
     ObstacleBottom1: Obstacle(
       world,
       'ObstacleBottom1',
-      'blue',
+      'green',
       pipeSizePosA.pipeBottom.pos,
       pipeSizePosA.pipeBottom.size,
     ),
@@ -42,14 +42,14 @@ const restar = () => {
     ObstacleTop2: Obstacle(
       world,
       'ObstacleTop2',
-      'purple',
+      'red',
       pipeSizePosB.pipeTop.pos,
       pipeSizePosB.pipeTop.size,
     ),
     ObstacleBottom2: Obstacle(
       world,
       'ObstacleBottom2',
-      'blue',
+      'green',
       pipeSizePosB.pipeBottom.pos,
       pipeSizePosB.pipeBottom.size,
     ),
